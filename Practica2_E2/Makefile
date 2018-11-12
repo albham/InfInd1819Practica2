@@ -78,7 +78,7 @@ exe% : prueba%
 exe :  $(sort $(pruebas:.cpp=))
 	@for fa in $^; \
 	do echo "\n$$(tput setaf 2)==== $$fa ===========================$$(tput setaf 9)"; \
-	ulimit -v 3000000 -t 3; \
+	ulimit -v 30000; ulimit -t 3; \
 	./$$fa;done
 
 fallidas :   $(sort $(pruebas:.cpp=))
